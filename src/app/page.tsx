@@ -1,5 +1,9 @@
-import Editor from "./components/Editor";
+import dynamic from "next/dynamic";
 
+const Editor = dynamic(() => import('@/components/Editor'), {
+  ssr: false,
+  loading: () => <div>...loading</div>
+});
 
 
 const Page = () => {
